@@ -7,26 +7,16 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:property-placeholder location="classpath:sport.properties"/>
-
-    <bean id="myOldFortune"
-    	class="com.glennh.springdemo.HappyFortuneService">
-    </bean>
     <bean id="myFortune"
     	class="com.glennh.springdemo.ArrayFortuneService">
     </bean>
     
     <bean id="myCoach"
-    	class="com.glennh.springdemo.SailingCoach">
+    	class="com.glennh.springdemo.TrackCoach"
+    	scope="prototype">
     	<constructor-arg ref="myFortune"/>
 	</bean>
 	
-	<bean id="myCricketCoach"
-    	class="com.glennh.springdemo.CricketCoach">
-    	<property name="fortuneService" ref="myFortune" />
-    	<property name="emailAddress" value="${coach.email}" />
-    	<property name="team" value="${coach.team}" />
-	</bean>
 </beans>
 
 
