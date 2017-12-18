@@ -10,4 +10,10 @@ public class BakingCoach implements Coach {
 		return "Practice kneading";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
