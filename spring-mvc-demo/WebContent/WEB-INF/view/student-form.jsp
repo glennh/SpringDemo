@@ -9,11 +9,32 @@
 </head>
 <body>
 	<form:form action="processForm" modelAttribute="student">
-	First name: <form:input path="firstName"/>
-	<br><br>
-	Last name: <form:input path="lastName"/>
-	<br><br>
-	<input type="submit" value="Submit" />
+		First name: <form:input path="firstName"/>
+			<br><br>
+		Last name(*): 
+			<form:input path="lastName"/>
+			<form:errors path="lastName" cssClass="error" />
+			<br><br>
+		Country:
+			<form:select path="country">
+				<form:options items="${theCountryOptions}" />
+			</form:select>
+			<br><br>
+		Favourite Language:
+			Java <form:radiobutton path="favouriteLanguage" value="Java" />
+			C# <form:radiobutton path="favouriteLanguage" value="C#" />
+			Perl <form:radiobutton path="favouriteLanguage" value="Perl" />
+			Monkey <form:radiobutton path="favouriteLanguage" value="Monkey" />
+			<br><br>
+		Operating Systems:
+			Windows <form:checkbox path="operatingSystems" value="Windows" />
+			Mac OS <form:checkbox path="operatingSystems" value="Mac OS" />
+			Linux <form:checkbox path="operatingSystems" value="Linux" />
+			<br><br>
+			
+		<input type="submit" value="Submit" />
+			<br><br>
 	</form:form>
+	
 </body>
 </html>
